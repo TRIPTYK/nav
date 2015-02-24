@@ -4,14 +4,10 @@ module.exports = function(grunt) {
   grunt.initConfig({
     files: {
       js: {
-        src: ["app/2_js/main.js", "app/2_js/**/*.js"],
+        src: ["app/js/nav-voo.js"],
         vendors: ["bower_components/jquery/dist/jquery.js"],
       },
-      assets: {
-        templates: "app/1_templates/",
-        images: "app/4_images/",
-        fonts: "app/6_fonts/"
-      }
+      assets: {}
     },
     sass: {
       options: {
@@ -32,27 +28,19 @@ module.exports = function(grunt) {
       }
     },
     sync: {
-      images: {
+      html: {
         files: [{
-          cwd: '<%= files.assets.images %>',
-          src: ['**'],
-          dest: 'generated/static/images'
-        }],
-        verbose: true
-      },
-      templates: {
-        files: [{
-          cwd: '<%= files.assets.templates %>',
-          src: ['**'],
+          cwd: 'app/',
+          src: ['*.html'],
           dest: 'generated/static/'
         }],
         verbose: true
       },
-      fonts: {
+      css: {
         files: [{
-          cwd: '<%= files.assets.fonts %>',
-          src: ['**'],
-          dest: 'generated/static/fonts'
+          cwd: 'app/css',
+          src: ['*.css'],
+          dest: 'generated/static/css/'
         }],
         verbose: true
       }
@@ -63,9 +51,6 @@ module.exports = function(grunt) {
           mangle: {
             except: ['jQuery']
           },
-          sourceMap: true,
-          sourceMapName: 'generated/static/sourcemap.map',
-          sourceMapIncludeSources: true
         },
         src: ["<%= files.js.vendors %>", "<%= files.js.src %>"],
         dest: "generated/static/js/app.min.js"
@@ -88,48 +73,23 @@ module.exports = function(grunt) {
       }
 
     },
-    'compile-handlebars': {
-      globalTemplate: {
-        template: 'app/1_templates/pages/**/*.hbs',
-        templateData: 'app/1_templates/datas/pages/**/*.json',
-        output: 'tmp/*.html',
-        partials: 'app/1_templates/partials/**/*.hbs',
-        registerFullPath:false,
-          globals: [
-            'app/1_templates/datas/globals.json'
-          ]
-      }
-    },
-    multi_pages_assets_generator: {
-      options: {
-        jsFolder: 'app/2_js',
-        jsComponents :'bower_components',
-        cssFolder: 'tmp/css',
-        configJSON: 'config.json'
-      },
-      files: {
-        src: 'tmp',
-        dest: 'generated/static'
-      }
-    },
     watch: {
       options: {
         livereload: true
       },
-      templates: {
-        files: ["<%= files.assets.templates %>/**/*.hbs"],
-        tasks: ["compile-handlebars","multi_pages_assets_generator"]
-      },
       js: {
         files: ["<%= files.js.src %>"],
-        tasks: ["newer:uglify:generated","multi_pages_assets_generator"]
+        tasks: ["uglify"]
       },
-      sass: {
-        files: ["app/3_sass/**/*.scss"],
-        tasks: ["sass:dist","multi_pages_assets_generator"]
+      html: {
+        files: ["app/index.html"],
+        tasks: ["sync:html"]
+      },css: {
+        files: ["app/css/**/*.css"],
+        tasks: ["sync:css"]
       }
     }
   });
   require('matchdep').filterAll('grunt-*').forEach(grunt.loadNpmTasks);
-  grunt.registerTask('default', ['compile-handlebars:globalTemplate','sass:dist', 'multi_pages_assets_generator', 'sync:images', 'sync:fonts', 'http-server', 'watch']);
+  grunt.registerTask('default', ['uglify', 'sync:html','sync:css','http-server', 'watch']);
 }
