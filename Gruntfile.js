@@ -36,11 +36,11 @@ module.exports = function(grunt) {
         }],
         verbose: true
       },
-      css: {
+      images: {
         files: [{
-          cwd: 'app/css',
-          src: ['*.css'],
-          dest: 'generated/static/css/'
+          cwd: 'app/images/',
+          src: ['*.*'],
+          dest: 'generated/static/images/'
         }],
         verbose: true
       }
@@ -91,5 +91,5 @@ module.exports = function(grunt) {
     }
   });
   require('matchdep').filterAll('grunt-*').forEach(grunt.loadNpmTasks);
-  grunt.registerTask('default', ['uglify','sass:dist' ,'sync:html','http-server', 'watch']);
+  grunt.registerTask('default', ['uglify','sass:dist' ,'sync:html','sync:images','http-server', 'watch']);
 }
