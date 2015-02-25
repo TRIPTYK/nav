@@ -1,4 +1,6 @@
 @import 'normalize';
+@import 'susy';
+@import 'compass';
 html {
 	height: 100%;
 	box-sizing: border-box;
@@ -38,42 +40,32 @@ nav {
 		line-height: 100px;
 		padding: 0 50px;
 	}
-	a {
-		color: #FFF;
-		text-decoration: none;
-	}
-	a:visited {
-		color: #FFF;
-	}
 }
-.sub-menu-products {
+ul {
+	list-style: none;
+}
+a {
+	color: #FFF;
+	text-decoration: none;
+}
+a:visited {
+	color: #FFF;
+}
+.sub-menu-products, .sub-menu-products-packs, 
+.sub-menu-products-television, .sub-menu-products-internet, 
+.sub-menu-products-telfixe, .sub-menu-products-mobile {
+	@include container;
+	@include clearfix;
+	position: absolute;
+	width: 100%;
 	top: 100px;
 	background-color: #999;
-	position: absolute;
-	height: auto;
 	margin: 0;
-	padding: 0 0 0 2em;
-	width: 100%;
-	ul {
-		list-style: none;
-		margin: 0;
-		padding: 0;
-	}
-	li {
-		display: inline-block;
-		line-height: 100px;
-		margin: 0;
-		float: left;
-	}
 }
-.sub-menu-products li {
-	padding: 0 50px;
-	top: 0;
-}
-
 .cols {
 	margin: 0;
 	padding: 0;
+	@include gallery (1 of 3);
 	li {
 		display: block;
 		width: 100%;
