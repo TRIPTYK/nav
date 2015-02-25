@@ -39,46 +39,60 @@ nav {
 	padding: 0 50px;
 }
 a {
+	color: #FFF;
 	text-decoration: none;
 }
 a:visited {
 	color: #FFF;
 }
-.sub-menu-products {
-	display: none;
-	position: absolute;
-	width: 100%;
-	height: 100px;
+.sub-menu-products, .sub-menu-packs, .sub-menu-television, .sub-menu-internet, .sub-menu-telfixe, .sub-menu-mobile {
 	top: 100px;
-	background-color: #ccc;
-}
-.sub-menu-products ul {
-	list-style: none;
-	margin: 0;
-	padding: 0;
 }
 .sub-menu-products li {
-	display: inline-block;
-	line-height: 100px;
 	padding: 0 50px;
-	float: right;
 }
-.sub-menu2 {
+.sub-menu {
 	display: none;
+	background-color: #999;
 	position: absolute;
+	height: auto;
+	margin: 0;
+	padding: 0 0 0 2em;
 	width: 100%;
-	height: 100px;
-	top: 100px;
-	background-color: #ccc;
 }
-.sub-menu2 ul {
+.sub-menu ul {
 	list-style: none;
 	margin: 0;
 	padding: 0;
 }
-.sub-menu2 li {
+.sub-menu li {
 	display: inline-block;
 	line-height: 100px;
-	padding: 0 50px;
-	float: right;
+	margin: 0;
+	float: left;
+}
+.cols {
+	margin: 0;
+	padding: 0;
+}
+.cols li {
+	display: block;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	line-height: 25px;
+}
+.cols li:last-child {
+	padding-bottom: 50px;
+}
+.logo {
+	font-size: 32px;
+}
+.logo-sub-menu {
+	display: none;
+}
+.back-sub-menu {
+	display: none;
+	font-size: 12px;
+	padding-right: 5em;
 }
