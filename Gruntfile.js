@@ -84,9 +84,9 @@ module.exports = function(grunt) {
       html: {
         files: ["app/index.html"],
         tasks: ["sync:html"]
-      },css: {
-        files: ["app/css/**/*.css"],
-        tasks: ["sync:css"]
+      },sass: {
+        files: ["app/sass/**/*.scss"],
+        tasks: ["sass:dist"]
       }
     }
   });
