@@ -13,18 +13,18 @@ module.exports = function(grunt) {
       options: {
         sourceMap: false,
         outputStyle: 'extended',
-        includePaths: ['bower_components/compass-mixins/lib/', 'bower_components/susy/sass/', 'app/3_sass']
+        includePaths: ['bower_components/compass-mixins/lib/', 'bower_components/susy/sass/', 'app/sass']
       },
       dist: {
         files: [{
 
           expand: true, // Enable dynamic expansion.
-          cwd: 'app/3_sass/', // Src matches are relative to this path.
+          cwd: 'app/sass/', // Src matches are relative to this path.
           src: ['**/*.scss'], // Actual pattern(s) to match.
-          dest: 'tmp/css', // Destination path prefix.
+          dest: 'generated/static/css', // Destination path prefix.
           ext: '.css', // Dest filepaths will have this extension.
           extDot: 'first' // Extensions in filenames begin after the first dot
-        }, ],
+        }],
       }
     },
     sync: {
@@ -91,5 +91,5 @@ module.exports = function(grunt) {
     }
   });
   require('matchdep').filterAll('grunt-*').forEach(grunt.loadNpmTasks);
-  grunt.registerTask('default', ['uglify', 'sync:html','sync:css','http-server', 'watch']);
+  grunt.registerTask('default', ['uglify','sass:dist' ,'sync:html','http-server', 'watch']);
 }
