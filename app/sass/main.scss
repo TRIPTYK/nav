@@ -78,7 +78,12 @@ a:visited {
 	}
 }
 .logo {
-	font-size: 32px;
+	position: absolute;
+	top: 20px;
+	left: 45px;
+}
+.search {
+	padding-top: 29px;
 }
 .logo-sub-menu {
 	display: none;
