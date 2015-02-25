@@ -17,74 +17,73 @@ nav {
 	position: absolute;
 	width: 100%;
 	background-color: #ccc;
+	height: 100px;
 }
 .first {
 	position: absolute;
 	left: 2em;
 	line-height: 100px;
 }
-.high-menu {
-	height: 100px;
+.nav {
 	margin: 0;
 	padding: 0;
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+	li {
+		display: inline-block;
+		float: right;
+		line-height: 100px;
+		padding: 0 50px;
+	}
+	a {
+		color: #FFF;
+		text-decoration: none;
+	}
+	a:visited {
+		color: #FFF;
+	}
 }
-.high-menu ul {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-}
-.high-menu li {
-	display: inline-block;
-	float: right;
-	line-height: 100px;
-	padding: 0 50px;
-}
-a {
-	color: #FFF;
-	text-decoration: none;
-}
-a:visited {
-	color: #FFF;
-}
-.sub-menu-products, .sub-menu-packs, .sub-menu-television, .sub-menu-internet, .sub-menu-telfixe, .sub-menu-mobile {
+.sub-menu-products {
 	top: 100px;
-}
-.sub-menu-products li {
-	padding: 0 50px;
-}
-.sub-menu {
-	display: none;
 	background-color: #999;
 	position: absolute;
 	height: auto;
 	margin: 0;
 	padding: 0 0 0 2em;
 	width: 100%;
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+	li {
+		display: inline-block;
+		line-height: 100px;
+		margin: 0;
+		float: left;
+	}
 }
-.sub-menu ul {
-	list-style: none;
-	margin: 0;
-	padding: 0;
+.sub-menu-products li {
+	padding: 0 50px;
+	top: 0;
 }
-.sub-menu li {
-	display: inline-block;
-	line-height: 100px;
-	margin: 0;
-	float: left;
-}
+
 .cols {
 	margin: 0;
 	padding: 0;
-}
-.cols li {
-	display: block;
-	width: 100%;
-	margin: 0;
-	padding: 0;
-	line-height: 25px;
-}
-.cols li:last-child {
-	padding-bottom: 50px;
+	li {
+		display: block;
+		width: 100%;
+		margin: 0;
+		padding: 0;
+		line-height: 25px;
+	}
+	li:last-child {
+		padding-bottom: 50px;
+	}
 }
 .logo {
 	font-size: 32px;
