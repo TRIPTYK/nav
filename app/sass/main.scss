@@ -64,12 +64,28 @@ a:visited {
 }
 .sub-menu-products {
 	height: 100px;
+	margin: 0;
+	padding: 0;
 	line-height: 100px;
 	li {
 		@include span(1);
 	}
+	li:first-child {
+		text-align: right;
+	}
 	li:last-child {
 		@include last;
+	}
+}
+.sub-menu-products-packs {
+	height: 215px;
+	margin: 0;
+	padding: 0;
+	ul {
+		@include span(4);
+		padding: 0;
+
+
 	}
 }
 .rows {
@@ -103,6 +119,9 @@ a:visited {
 .search {
 	padding-top: 12px;
 }
+.menu-burger {
+	padding-top: 10px;
+}
 .hidden-item {
-	display: none;
+
 }
