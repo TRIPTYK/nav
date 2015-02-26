@@ -1,42 +1,33 @@
 (function($, w) {
   function Menu(ele) {
-    var baseElement = $('.' + ele);;
+    var baseElement = $('.' + ele);
+    var log = w.TPK.Logger.getInstance();
 
     function init() {
 
       initHandlers();
-      // var log = w.TPK.Logger.getInstance();
-      w.TPK.Logger.getInstance().error("hehehe");
-      w.TPK.Logger.getInstance().warn("hehehe");
-      w.TPK.Logger.getInstance().debug("hehehe");
+
 
     }
 
     function initHandlers() {
-      console.log('initHandlers');
-      console.log(baseElement);
-      $('a[TPK-MENU="global-menu-button"]').on('click', _clickHandler);
-      $('a[TPK-MENU="global-menu-button"]').on('mouseenter', _clickHandler);
-      $('a[TPK-MENU="products-menu-button"]').on('click', _clickHandler);
+      // log.info('initHandlers');
+      $('.button-products').on('click', showProductsMenu).on('mouseover', showProductsMenu)
 
+      // $('.sub-menu-products-item').on('click', )
     }
 
-
-    function _clickHandler(e) {
+    function showProductsMenu(e) {
       e.preventDefault();
-      eval('interract_' + $(this).attr('TPK-ID'))();
+      e.stopPropagation();
+      $('.sub-menu-products').fadeIn();
+      $('.sub-menu-products').on('mouseleave', hideProductsMenu);
     }
 
-
-    function interract_products() {
-      $(".nav").hide();
-      $(".sub-menu-products").show();
+    function hideProductsMenu(e) {
+      e.preventDefault();
+      $('.sub-menu-products').fadeOut();
     }
-
-    function interract_packs() {
-      $(".sub-menu-products-packs").show();
-    }
-
 
     init();
     return {
