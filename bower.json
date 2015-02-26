@@ -18,5 +18,7 @@
     "compass-mixins": "~1.0.2",
     "susy": "~2.2.2",
     "jquery": "1.11.0"
+  },
+  "dependencies": {
   }
 }
