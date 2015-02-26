@@ -1,5 +1,7 @@
-(function($,w) {
+(function ($, w) {
   $(function() {
-      var menu = w.voo.Menu('nav');
+    w.TPK.Logger.getInstance().setLogActive(true);
+    var menu = w.voo.Menu('nav');
+
   });
-})(jQuery,window);
+})(jQuery, window);

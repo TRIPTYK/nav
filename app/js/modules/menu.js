@@ -3,8 +3,12 @@
     var baseElement = $('.' + ele);;
 
     function init() {
-      console.log('init');
+
       initHandlers();
+      // var log = w.TPK.Logger.getInstance();
+      w.TPK.Logger.getInstance().error("hehehe");
+      w.TPK.Logger.getInstance().warn("hehehe");
+      w.TPK.Logger.getInstance().debug("hehehe");
 
     }
 
@@ -40,7 +44,7 @@
     };
   }
 
-  w.voo=w.voo || {};
+  w.voo = w.voo || {};
   w.voo.Menu = Menu;
 
 })(jQuery, window);
