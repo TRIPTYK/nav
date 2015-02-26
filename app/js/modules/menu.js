@@ -13,8 +13,6 @@
     function initHandlers() {
       // log.info('initHandlers');
       $('.button-products').on('click', showProductsMenu).on('mouseover', showProductsMenu)
-
-      // $('.sub-menu-products-item').on('click', )
     }
 
     function showProductsMenu(e) {
@@ -24,10 +22,12 @@
       $('.sub-menu-products').on('mouseleave', hideProductsMenu);
     }
 
+
     function hideProductsMenu(e) {
       e.preventDefault();
       $('.sub-menu-products').fadeOut();
     }
+
 
     init();
     return {
@@ -39,3 +39,6 @@
   w.voo.Menu = Menu;
 
 })(jQuery, window);
+
+
+//
