@@ -4,8 +4,8 @@ module.exports = function(grunt) {
   grunt.initConfig({
     files: {
       js: {
-        src: ["app/js/nav-voo.js"],
-        vendors: ["bower_components/jquery/dist/jquery.js"],
+        src: ["app/js/modules/**/*.js","app/js/index.js"],
+        vendors: ["bower_components/jquery/dist/jquery.min.js"],
       },
       assets: {}
     },
