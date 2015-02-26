@@ -6,20 +6,21 @@
 		<title>Nav VOO</title>
 	</head>
 	<body>
-		<nav>
+		<nav id="truc">
 			<!-- Menu principal -->
 			<ul class="nav">
 				<li class="logo"><a href="http://www.voo.be/fr/"><img src="images/header-logo.png" alt="Logo VOO"></a></li>
 				<li></li>
 				<li></li>
 				<li></li>
-				<li><a href="products" TPK-MENU="global-menu-button" TPK-ID="products">Nos produits</a></li>
-				<li><a href="http://assistance.voo.be" >Assistance</a></li>
-				<li><a href="http://www.myvoo.be">myVOO</a></li>
-				<li class="search"><img src="images/Black_Search.png" alt="Search"></li>
+				<li><a href="products" class ="button-products" TPK-ID="products">Nos produits</a></li>
+			<li><a href="http://assistance.voo.be" >Assistance</a></li>
+			<li><a href="http://www.myvoo.be">myVOO</a></li>
+			<li class="search"><img src="images/Black_Search.png" alt="Search"></li>
 			</ul>
 			<!-- Menu des produits -->
 			<ul class="sub-menu-products">
+
 				<li>
 					<div class="hidden-item logo">
 						<a href="http://www.voo.be/fr/"><img src="images/header-logo.png" alt="Logo VOO"></a>
@@ -30,42 +31,41 @@
 						<a href="" TPK-MENU="global-menu-button" TPK-ID="burger"><img src="images/burger.svg" alt=""></a>
 					</div>
 				</li>
-				<li><a href="packs" class="sub-menu-item" TPK-MENU="products-menu-button" TPK-ID="packs">Packs</a></li>
-				<li><a href="television" class="sub-menu-item" TPK-MENU="products-menu-button" TPK-ID="television">Télévision</a></li>
-				<li><a href="internet" class="sub-menu-item" TPK-MENU="products-menu-button" TPK-ID="internet">Internet</a></li>
-				<li><a href="telfixe" class="sub-menu-item" TPK-MENU="products-menu-button" TPK-ID="telfixe">Téléphonie fixe</a></li>
-				<li><a href="mobile" class="sub-menu-item" TPK-MENU="products-menu-button" TPK-ID="mobile">Mobile</a></li>
+				<li><a href="packs" class="sub-menu-products-item" TPK-ID="packs">Packs</a></li>
+				<li><a href="television" class="sub-menu-products-item"  TPK-ID="television">Télévision</a></li>
+				<li><a href="internet" class="sub-menu-products-item"  TPK-ID="internet">Internet</a></li>
+				<li><a href="telfixe" class="sub-menu-products-item" TPK-ID="telfixe">Téléphonie fixe</a></li>
+				<li><a href="mobile" class="sub-menu-products-item"TPK-ID="mobile">Mobile</a></li>
 				<li></li>
+
 			</ul>
 			<!-- Menu packs -->
-			<ul class="sub-menu-products-packs">
-				<li>
+			<ul class="sub-menu-products-packs testtruc">
+				<li class="cols"></li>
+				<li class="cols">
 					<ul>
-						<li class="cols">
-							<ul>
-								<li><h2>Pack Trio</h2></li>
-								<li><a href="">Un peu</a></li>
-								<li><a href="">Beaucoup</a></li>
-								<li><a href="">Passionnement</a></li>
-								<li><a href="">A la folie</a></li>
-								<li><a href="">Fiber</a></li>
-							</ul>
-						</li>
-						<li class="cols">
-							<ul>
-								<li><h2>Pack Duo</h2></li>
-								<li><a href="">Un peu</a></li>
-								<li><a href="">Beaucoup</a></li>
-								<li><a href="">Passionnement</a></li>
-								<li><a href="">A la folie</a></li>
-								<li><a href="">Fiber</a></li>
-							</ul>
-						</li>
+						<li><h2>Pack Trio</h2></li>
+						<li><a href="">Un peu</a></li>
+						<li><a href="">Beaucoup</a></li>
+						<li><a href="">Passionnement</a></li>
+						<li><a href="">A la folie</a></li>
+						<li><a href="">Fiber</a></li>
 					</ul>
 				</li>
+				<li class="cols">
+					<ul>
+						<li><h2>Pack Duo</h2></li>
+						<li><a href="">Un peu</a></li>
+						<li><a href="">Beaucoup</a></li>
+						<li><a href="">Passionnement</a></li>
+						<li><a href="">A la folie</a></li>
+						<li><a href="">Fiber</a></li>
+					</ul>
+				</li>
+				<li class="cols"></li>
 			</ul>
 			<!-- Menu television -->
-			<ul class="sub-menu-products-television">
+			<ul class="sub-menu-products-television testtruc">
 				<li class="cols">
 					<ul>
 						<li><h2>Les abonnements</h2></li>
@@ -112,7 +112,7 @@
 				</li>
 			</ul>
 			<!-- Menu internet -->
-			<ul class="sub-menu-products-internet">
+			<ul class="sub-menu-products-internet testtruc">
 				<li class="cols">
 					<ul>
 						<li><h2>Les abonnements</h2></li>
@@ -143,7 +143,7 @@
 				</li>
 			</ul>
 			<!-- Menu téléphonie fixe -->
-			<ul class="sub-menu-products-telfixe">
+			<ul class="sub-menu-products-telfixe testtruc">
 				<li class="cols">
 					<ul>
 						<li><h2>Les abonnements</h2></li>
@@ -168,7 +168,7 @@
 				</li>
 			</ul>
 			<!-- Menu téléphonie mobile -->
-			<ul class="sub-menu-products-mobile">
+			<ul class="sub-menu-products-mobile testtruc">
 				<li class="cols">
 					<ul>
 						<li><h2>Les abonnements</h2></li>
@@ -202,3 +202,5 @@
 		<script src="js/app.min.js"></script>
 	</body>
 </html>
+
+
