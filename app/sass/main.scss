@@ -4,127 +4,148 @@
 @import 'variables';
 
 html {
-	height: 100%;
 	@include box-sizing(border-box);
 }
 *, *:before, *:after {
 	@include box-sizing(inherit);
 }
 body {
-	height: 100%;
 	margin: 0;
 	padding: 0;
+	font-family: helvetica, arial, sans-serif;
 	font-size: 16px;
 	color: #fff;
 }
+.container {
+	width: 1152px;
+	margin: 0 auto;
+}
 nav {
-	position: absolute;
-	width: 100%;
-	background-color: #ccc;
+	position: relative;
 	height: 100px;
+	background-color: #ccc;
+	margin: 0;
+	padding: 0;
 }
 ul {
 	list-style: none;
 }
-.nav {
-	@include container;
-	@include clearfix;
-	margin: 0;
-	padding: 0;
-	font-size: 1.3rem;
-	li {
-		display: inline-block;
-		height: 100px;
-		@include span(1);
-		line-height: 100px;
-	}
-	li:last-child {
-		@include last;
-	}
-}
 a {
-	color: #FFF;
+	display: block;
+	border: none;
+	color: #fff;
 	text-decoration: none;
 }
 a:visited {
-	color: #FFF;
+	color: #fff;
 }
-.sub-menu-products, .sub-menu-products-packs, 
-.sub-menu-products-television, .sub-menu-products-internet,
-.sub-menu-products-telfixe, .sub-menu-products-mobile {
-	display: none;
-	@include container;
-	@include clearfix;
-	position: absolute;
-	width: 100%;
-	top: 100px;
-	background-color: #999;
-	margin: 0;
-	font-size: 1.2rem;
-	li {
-	}
-}
-.sub-menu-products {
+.pre-nav {
+	position: relative;
+	z-index: 1000;
+	float: left;
+	width: 245px;
 	height: 100px;
 	margin: 0;
 	padding: 0;
-	line-height: 100px;
 	li {
-		@include span(1);
+		display: inline-block;
+		vertical-align: middle;
+		padding-top: 21px;
 	}
 	li:first-child {
-		text-align: right;
+		margin-right: 2em;
 	}
-	li:last-child {
-		@include last;
+	.logo {
+		margin-left: 2em;
+		padding-top: 1.5em;
+	}
+
+}
+.vertical-align {
+		vertical-align: middle;
+	}
+.nav {
+	float:right;
+	height: 100px;
+	margin: 0;
+	padding: 0;
+	font-size: 1.3rem;
+	ul { 
+		overflow: hidden;
+		margin: 0;
+		padding: 0;
+		height: 100px;
+	}
+	li {
+		display: inline-block;
+		float: left;
+		margin-bottom: 0;
+		margin-right: 2em;
+		line-height: 100px;
+	}
+	.search {
+		padding-top: 13px;
+	}
+}
+.hidden-item{
+	display: none;
+}
+
+.sub-menu-products, .sub-menu-products-packs, 
+.sub-menu-products-television, .sub-menu-products-internet, 
+.sub-menu-products-telfixe, .sub-menu-products-mobile {
+	display: none;
+	position: absolute;
+	width: 1152px;
+	top: 100px;
+	margin: 0;
+	background-color: #999;
+}
+.sub-menu-products {
+	padding: 0 0 0 245px;
+	line-height: 100px;
+	li{
+		display: inline-block;
+		padding: 0 10px;
+	}
+	a {
+		font-size: 1.3rem;
 	}
 }
 .sub-menu-products-packs {
-	height: 215px;
-	margin: 0;
-	padding: 0;
-	> li {
-		@include container;
-		@include clearfix;
-	}
+	@include container;
+	@include clearfix;
 	.cols {
-		@include gallery (1 of 4);
-	}
-}
-.rows {
-	padding: 0;
-	margin: 0 0 0 10em;
-	li {
 		display: inline-block;
-		margin: 0 0 0 2em;
-		padding: 0 5px;
+		@include gallery (1 of 4);
+		li {
+			padding: 5px 0;
+		}
+		a {
+			font-size: 1.1em;
+		}
+		h2 {
+			font-size: 1.3em;
+			margin: 1em 0 0 0;
+		}
 	}
 }
-.cols {
-	margin: 0;
-	padding: 0;
-	@include gallery (4 of 12);
+.sub-menu-products-television, .sub-menu-products-internet, 
+.sub-menu-products-telfixe, .sub-menu-products-mobile {
+	@include container;
+	@include clearfix;
+	.cols {
+		display: inline-block;
+		@include gallery(1 of 3);
+	}
 	li {
-		display: block;
-		width: 100%;
-		margin: 0;
-		padding: 0;
-		line-height: 25px;
+		padding: 5px 0;
 	}
-	li:last-child {
-		padding-bottom: 50px;
+	a {
+		font-size: 1.1em;
 	}
-}
-.logo {
-	padding-top: 17px;
-	text-align: right;
-}
-.search {
-	padding-top: 12px;
-}
-.menu-burger {
-	padding-top: 10px;
-}
-.hidden-item {
-
+	h2 {
+		font-size: 1.3em;
+		margin: 1em 0 0 0;
+	}
 }
