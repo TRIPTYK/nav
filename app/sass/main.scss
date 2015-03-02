@@ -15,6 +15,7 @@ body {
 	padding: 0;
 	font-family: Ubuntu, arial, sans-serif;
 	font-size: 16px;
+	font-weight: 200;
 	color: #fff;
 }
 .container {
@@ -141,7 +142,7 @@ a {
 	height: 80px;
 	margin: 0;
 	padding: 0;
-	font-size: 1.3rem;
+	font-size: 1.2rem;
 	ul { 
 		overflow: hidden;
 		margin: 0;
@@ -195,25 +196,7 @@ a {
 		font-size: 1rem;
 	}
 }
-.sub-menu-products-packs {
-	@include container;
-	@include clearfix;
-	.cols {
-		display: inline-block;
-		vertical-align: top;
-		li {
-			padding: 5px 0;
-		}
-		a {
-			font-size: 1em;
-		}
-		h2 {
-			font-size: 1.3em;
-			margin: 1em 0 0 0;
-		}
-	}
-}
-.sub-menu-products-television, .sub-menu-products-internet, 
+.sub-menu-products-packs, .sub-menu-products-television, .sub-menu-products-internet, 
 .sub-menu-products-telfixe, .sub-menu-products-mobile {
 	@include clearfix;
 	.cols {
