@@ -9,6 +9,7 @@
 
     }
 
+
     function initHandlers() {
       // log.info('initHandlers');
       $('.button-products').on('click', showProductsMenu).on('mouseover', showProductsMenu);
@@ -31,7 +32,7 @@
     function switchSubMenu(e){
       e.preventDefault();
       $('.sub-menu-products').css({'top':'0', 'background-color':'#fff'});
-      $('.sub-menu-products-item').css({'color':'black'});
+      $('.sub-menu-products-item').addClass('color-black');
       $('.sub-menu-products').off('mouseleave', hideProductsMenu);
       $('.sub-menu-products-item').on('mouseover', showSubMenu);
       $('.hidden-item').show();
@@ -40,9 +41,14 @@
 
     function showSubMenu(e){
       e.preventDefault();
+      $('.sub-menu-products-item').removeClass('active-tab');
+      var subMenuTarget = $('.sub-menu-products-'+ $(this).attr('TPK-ID')),
+          left = $('.container').width() - subMenuTarget.width();
+          left = left/2;
       //console.log(e);
       $('.sub-sub-menu').hide();
-      $('.sub-menu-products-'+ $(this).attr('TPK-ID')).fadeIn();
+      subMenuTarget.fadeIn().css('left', left); 
+      $(this).delay().addClass('active-tab');
     }
 
     // function hideSubMenu(e){
