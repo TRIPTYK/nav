@@ -2,6 +2,7 @@
 @import 'compass';
 @import 'susy';
 @import 'variables';
+@import url(http://fonts.googleapis.com/css?family=Ubuntu:300,400);
 
 html {
 	@include box-sizing(border-box);
@@ -12,20 +13,14 @@ html {
 body {
 	margin: 0;
 	padding: 0;
-	font-family: helvetica, arial, sans-serif;
+	font-family: Ubuntu, arial, sans-serif;
 	font-size: 16px;
 	color: #fff;
 }
 .container {
+	position: relative;
 	width: 1152px;
 	margin: 0 auto;
-}
-nav {
-	position: relative;
-	height: 100px;
-	background-color: #ccc;
-	margin: 0;
-	padding: 0;
 }
 ul {
 	list-style: none;
@@ -33,12 +28,89 @@ ul {
 a {
 	display: block;
 	border: none;
-	color: #fff;
 	text-decoration: none;
 }
-a:visited {
-	color: #fff;
-}
+.headband {
+	position: relative;
+	height: 42px;
+	background-color: #3e3e40;
+	a {
+		display: inline-block;
+		line-height: 35px;
+		color: white;
+		font-size: 0.8em;
+		text-align: center;				
+		cursor: pointer;
+		&:visited {
+			color: white;
+		}
+	}
+	.type-user {
+		position: absolute;
+		width: 225px;
+		height: 35px;
+		top: 8px;
+		left: 1em;
+		a {
+			width:110px;
+			height:35px;
+		}
+		.active-tab {
+			background-color: white;
+			-webkit-border-top-left-radius: 5px;
+			-webkit-border-top-right-radius: 5px;
+			-moz-border-radius-topleft: 5px;
+			-moz-border-radius-topright: 5px;
+			border-top-left-radius: 5px;
+			border-top-right-radius: 5px;
+			color: black;
+		}
+	}
+	.contact-mag-lang {
+			position: absolute;
+			height: 35px;
+			top: 8px;
+			right: 0;
+			a {
+				margin-right: 40px;
+			}
+			.choix-langue {
+				float: right;
+				height: 34px;
+				overflow: hidden;
+				background:transparent url('../images/icon-select.png') right no-repeat;
+				select {
+					background:transparent;
+					width: 35px;
+					margin-top: 10px;
+					font-size: 0.7em;
+					border: none;
+					@include border-radius(0);
+					-webkit-appearance: none;
+					text-align:center;
+					option {
+						text-align:center;
+					}
+				}
+				.langue-active {
+					float: none;
+				}
+
+				#lang-nav {
+					list-style-type: none;
+					list-style-position: inside;
+					padding: 0;
+					margin: 0;
+					display: none;
+					a {
+						color: black;
+						line-height: 15px;
+						float: none;
+					}
+				}
+			}	
+		}
+	}
 .pre-nav {
 	position: relative;
 	z-index: 1000;
@@ -66,7 +138,7 @@ a:visited {
 	}
 .nav {
 	float:right;
-	height: 100px;
+	height: 80px;
 	margin: 0;
 	padding: 0;
 	font-size: 1.3rem;
@@ -83,6 +155,12 @@ a:visited {
 		margin-right: 2em;
 		line-height: 100px;
 	}
+	a {
+		color: black;
+		&:visited {
+			color: black;
+		}
+	}
 	.search {
 		padding-top: 13px;
 	}
@@ -96,10 +174,14 @@ a:visited {
 .sub-menu-products-telfixe, .sub-menu-products-mobile {
 	display: none;
 	position: absolute;
-	width: 1152px;
 	top: 100px;
-	margin: 0;
-	background-color: #999;
+	padding: 0;
+	margin: 0 auto; 
+	background-color: #3e3e40;
+	border-radius: 5px; 
+	a {
+		color: white;
+	}
 }
 .sub-menu-products {
 	padding: 0 0 0 245px;
@@ -109,7 +191,8 @@ a:visited {
 		padding: 0 10px;
 	}
 	a {
-		font-size: 1.3rem;
+		color: white;
+		font-size: 1rem;
 	}
 }
 .sub-menu-products-packs {
@@ -117,12 +200,12 @@ a:visited {
 	@include clearfix;
 	.cols {
 		display: inline-block;
-		@include gallery (1 of 4);
+		vertical-align: top;
 		li {
 			padding: 5px 0;
 		}
 		a {
-			font-size: 1.1em;
+			font-size: 1em;
 		}
 		h2 {
 			font-size: 1.3em;
@@ -132,20 +215,28 @@ a:visited {
 }
 .sub-menu-products-television, .sub-menu-products-internet, 
 .sub-menu-products-telfixe, .sub-menu-products-mobile {
-	@include container;
 	@include clearfix;
 	.cols {
 		display: inline-block;
-		@include gallery(1 of 3);
+		vertical-align: top;
+		margin-right: 45px;
+	}
+	.cols:first-child {
+		margin-left: 40px;
+	}
+	ul {
+		padding: 0;
+		margin: 0;
 	}
 	li {
 		padding: 5px 0;
 	}
 	a {
-		font-size: 1.1em;
+		font-size: 1em;
 	}
 	h2 {
-		font-size: 1.3em;
+		font-size: 1em;
+		color: #949597;
 		margin: 1em 0 0 0;
 	}
 }
