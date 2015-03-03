@@ -129,7 +129,7 @@ a {
 		@include susy-breakpoint(60em) {
 			margin-left: 2em;
 		}
-		padding-top: 13px;
+		padding-top: 20px;
 	}
 }
 .vertical-align {
@@ -164,6 +164,7 @@ a {
 		}
 	}
 	.menu-burger {
+		display: none;
 		width: 100%;
 		background-color: $darkgrey;
 		position: absolute;
@@ -182,16 +183,21 @@ a {
 		.primaryNav {
 			margin: 0;
 			padding: 20px;
-			.detailProducts {
-				// display: none;
+			.listProducts {
+				display: none;
 				margin: 0;
 				padding: 10px 20px;
 				width: 100%;
 				background-color: $darkgrey;
-				position: relative;
+				position: absolute;
 				top: 0;
 				left: 0;
-				.packsProducts {
+				> .breadcrumb {
+					padding-bottom: 1em;
+					margin-bottom: 1em;
+					border-bottom: 1px solid $lightgrey;
+				}
+				.detailsProducts {
 					margin: 0;
 					background-color: $darkgrey;
 					width: 100%;
@@ -200,7 +206,21 @@ a {
 					position: absolute;
 					top: 0;
 					left: 0;
+					ul {
+						margin: 0;
+						padding: 0;
+					}
+					li {
+						font-size: 1.2em;
+					}
 				}
+			}
+			h4 {
+				font-size: 1em;
+				color: $lightgrey;
+				margin: 1em 0 0 0;
+				padding-top: 1em;
+				border-top: 1px solid $lightgrey;
 			}
 		}
 		.secondaryNav {
@@ -213,6 +233,10 @@ a {
 			}
 			.langs {
 				float: right;
+			}
+			&.position-abs {
+				position: absolute;
+				width: 100%;
 			}
 		}
 	}
@@ -278,7 +302,7 @@ a {
 		display: inline-block;
 	}
 	a {
-		padding: 23px 15px 29px 15px;
+		padding: 23px 15px 31px 15px;
 		color: white;
 		font-size: 1rem;
 		&.active-tab {
@@ -291,6 +315,7 @@ a {
 		color: black;
 	}
 	.burger {
+		margin-top: 7px;
 		padding: 18px 15px 23px 15px;
 		font-size: 1.5em;
 		&:after {
@@ -304,7 +329,7 @@ a {
 	}
 	.envie-search {
 		float: right;
-		padding-top: 22px;
+		padding-top: 12px;
 		div {
 			float: left;
 			//padding-top: 10px;
@@ -360,6 +385,9 @@ a {
 		background-color: $darkgrey;
 		padding: 0 10px;
 		@include border-radius(5px);
+		.empty {
+			padding: 0;
+		}
 		h2 {
 			margin-left: 40px;
 			font-size: 1rem;
