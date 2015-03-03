@@ -44,7 +44,11 @@
       //console.log(e);
       $('.content-burger').hide();
       $('.sub-sub-menu').hide();
-      $('.sub-menu-products-'+ $(this).attr('TPK-ID')).show().css('left', left); 
+      if ($(this).attr('TPK-ID') === 'burger') {
+        $('.content-burger').show();
+      } else {
+        $('.sub-menu-products-'+ $(this).attr('TPK-ID')).show().css('left', left);
+      }
       $(this).addClass('active-tab');
     }
 
