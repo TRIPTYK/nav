@@ -192,7 +192,11 @@ a {
 				position: absolute;
 				top: 0;
 				left: 0;
+				a {
+					font-size: 1em;
+				}
 				> .breadcrumb {
+					font-size: 1em;
 					padding-bottom: 1em;
 					margin-bottom: 1em;
 					border-bottom: 1px solid $lightgrey;
@@ -211,7 +215,7 @@ a {
 						padding: 0;
 					}
 					li {
-						font-size: 1.2em;
+						font-size: 1.1em;
 					}
 				}
 			}
@@ -253,7 +257,7 @@ a {
 	// height: 80px;
 	margin: 0;
 	padding: 0;
-	font-size: 1.2rem;
+	font-size: 1.5em;
 	ul { 
 		overflow: hidden;
 		margin: 0;

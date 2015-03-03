@@ -38,18 +38,28 @@
       $('.secondaryNav').addClass('position-abs').css('top', heightMenu+20);
       $('.btn-sub-menu-mobile').on('click', showProductsSubMenuMobile);
       $('.btn-back').on('click', backMenuMobile);
+      $('.btn-back-prod').on('click', backProductsMenuMobile);
     }
+
     function backMenuMobile(e) {
       e.preventDefault();
       $('.detailsProducts, .listProducts').hide();
       $('.secondaryNav').removeClass('position-abs').removeAttr('style');
     }
 
+    function backProductsMenuMobile(e) {
+      e.preventDefault();
+      var heightMenu = $('.listProducts').height();
+      $('.detailsProducts, .listProducts').hide();
+      $('.listProducts').show();
+      $('.secondaryNav').removeClass('position-abs').removeAttr('style').addClass('position-abs').css('top', heightMenu+20);   
+    }
+
     function showProductsSubMenuMobile(e) {
       e.preventDefault();
       var heightMenu = $(this).next('.detailsProducts').height();
       $(this).next('.detailsProducts').show();
-      $('.secondaryNav').addClass('position-abs').css('top', heightMenu+20);
+      $('.secondaryNav').addClass('position-abs').css('top', heightMenu+16);
     }
 
     function showProductsMenu(e) {
