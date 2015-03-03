@@ -121,7 +121,7 @@ a {
 	li {
 		display: inline-block;
 		vertical-align: middle;
-		padding-top: 12px;margin-left: 2em;
+		margin-left: 2em;
 		padding-top: 13px;
 	}
 }
@@ -157,40 +157,9 @@ a {
 		padding-top: 13px;
 	}
 }
-.content-burger {
-	display: none;
-	position: absolute;
-	width: 195px;
-	height: 170px;
-	top: 80px;
-	left: 175px;
-	z-index: 2000;
-	background-color: $darkgrey;
-	padding: 0 10px;
-	@include border-radius(5px);
-	h2 {
-		margin-left: 40px;
-		font-size: 1rem;
-		font-weight: 300;
-	}
-	ul {
-		padding: 0 0 0 20px;
-		margin: 0;
-	}
-	li {
-		padding: 5px 0;
-	}
-	a {
-		color: $white;
-	}
-	.active {
-		color: $pink;
-	}
-}
 .hidden-item {
 	display: none;
 }
-
 .sub-menu-products, .sub-menu-products-packs, 
 .sub-menu-products-television, .sub-menu-products-internet, 
 .sub-menu-products-telfixe, .sub-menu-products-mobile {
@@ -282,34 +251,36 @@ a {
 	h2 {
 		font-size: 1em;
 		color: $lightgrey;
-		margin: 1em 0 0 0;
+		margin: 1em 0 1em 0;
+	}
+	.content-burger {
+		display: none;
+		position: absolute;
+		width: 195px;
+		height: 194px;
+		top: 80px;
+		left: 165px;
+		z-index: 2000;
+		background-color: $darkgrey;
+		padding: 0 10px;
+		@include border-radius(5px);
+		h2 {
+			margin-left: 40px;
+			font-size: 1rem;
+			font-weight: 300;
+		}
+		ul {
+			padding: 0;
+			margin: 0;
+		}
+		li {
+			padding: 10px 0;
+		}
+		a {
+			color: $white;
+		}
+		.active {
+			color: $pink;
+		}
 	}
 }
-// .sub-menu-products-packs, .sub-menu-products-television, .sub-menu-products-internet, 
-// .sub-menu-products-telfixe, .sub-menu-products-mobile {
-// 	@include clearfix;
-// 	.cols {
-// 		display: block;
-// 		vertical-align: top;
-// 		margin-right: 3em;
-// 	}
-// 	.cols:first-child {
-// 		margin-left: 3em;
-// 	}
-// 	ul {
-// 		padding: 0;
-// 		margin: 0;
-// 	}
-// 	li {
-// 		padding: 5px 0;
-// 		display: block;
-// 	}
-// 	a {
-// 		font-size: 1em;
-// 	}
-// 	h2 {
-// 		font-size: 1em;
-// 		color: $lightgrey;
-// 		margin: 1em 0 0 0;
-// 	}
-// }

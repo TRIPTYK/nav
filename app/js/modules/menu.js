@@ -27,7 +27,7 @@
 
     function switchSubMenu(e){
       e.preventDefault();
-      $('.sub-menu-products').css({'top':'0', 'background-color':'#fff', 'padding':'10px 0 0 165px'});
+      $('.sub-menu-products').css({'top':'0', 'background-color':'#fff', 'padding':'2px 0 0 165px'});
       $('.sub-menu-products-item').addClass('color-black');
       $('.burger').removeClass('hidden-item').addClass('color-black');
       $('.sub-menu-products').off('mouseleave', hideProductsMenu);
