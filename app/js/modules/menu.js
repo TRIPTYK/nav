@@ -4,9 +4,7 @@
     var log = w.TPK.Logger.getInstance();
 
     function init() {
-
       initHandlers();
-
     }
 
     function initHandlers() {
@@ -29,7 +27,7 @@
 
     function switchSubMenu(e){
       e.preventDefault();
-      $('.sub-menu-products').css({'top':'0', 'background-color':'#fff', 'padding':'0 0 0 175px'});
+      $('.sub-menu-products').css({'top':'0', 'background-color':'#fff', 'padding':'0 0 0 165px'});
       $('.sub-menu-products-item').addClass('color-black');
       $('.burger').removeClass('hidden-item').addClass('color-black');
       $('.sub-menu-products').off('mouseleave', hideProductsMenu);
@@ -67,6 +65,3 @@
   w.voo.Menu = Menu;
 
 })(jQuery, window);
-
-
-//
