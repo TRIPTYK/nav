@@ -9,11 +9,9 @@
 
     }
 
-
     function initHandlers() {
       // log.info('initHandlers');
       $('.button-products').on('click', showProductsMenu).on('mouseover', showProductsMenu);
-      $('.burger').on('mouseover', openBurgerMenu);
     }
 
     function showProductsMenu(e) {
@@ -31,12 +29,12 @@
 
     function switchSubMenu(e){
       e.preventDefault();
-      $('.sub-menu-products').css({'top':'0', 'background-color':'#fff'});
+      $('.sub-menu-products').css({'top':'0', 'background-color':'#fff', 'padding':'0 0 0 175px'});
       $('.sub-menu-products-item').addClass('color-black');
+      $('.burger').removeClass('hidden-item').addClass('color-black');
       $('.sub-menu-products').off('mouseleave', hideProductsMenu);
       $('.sub-menu-products-item').on('mouseover', showSubMenu);
       $('.hidden-item').show();
-      //$('#nav').on('mouseleave', hideSubMenu);
     }
 
     function showSubMenu(e){
@@ -46,25 +44,22 @@
           left = $('.container').width() - subMenuTarget.width();
           left = left/2;
       //console.log(e);
+      $('.content-burger').fadeOut();
       $('.sub-sub-menu').hide();
-      subMenuTarget.fadeIn().css('left', left); 
-      $(this).delay().addClass('active-tab');
+      $('.sub-menu-products-'+ $(this).attr('TPK-ID')).fadeIn().css('left', left); 
+      $(this).addClass('active-tab');
     }
-
-    // function hideSubMenu(e){
-    //   e.preventDefault();
-    //   $('.sub-menu-products-'+ $(this).attr('TPK-ID')).fadeOut();
-    // }
 
     function openBurgerMenu(e){
       e.preventDefault();
       $('.sub-sub-menu').hide();
-      $('burger-content').fadeIn();
+      $('.sub-menu-products a').removeClass('active-tab');
+      $('.burger').addClass('active-tab');
+      $('.content-burger').fadeIn();
     }
 
     init();
     return {
-
     };
   }
 
